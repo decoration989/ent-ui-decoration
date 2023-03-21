@@ -1,0 +1,130 @@
+<div class="py-2">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mt-10">
+        <p-carousel [value]="gallery" [autoplayInterval]="3000" [circular]="false" [numVisible]="1" [numScroll]="1">
+            <ng-template let-img pTemplate="item">
+                <img src="{{img.url}}" alt="explore & identify">
+                <p>{{img.title}}</p>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>
+<div class="py-2">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mt-10">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-300">
+                {{"home.how_to_rent" | translate}}
+            </h2>
+        </div>
+        <div class="mt-12 max-w-7xl mx-auto flex items-center justify-center flex-wrap">
+            <ng-container *ngFor="let step of rentingSteps">
+                <div class="dark:bg-gray-300 rounded-md h-20 w-40 my-4 mx-4">
+                    <img class="object-contain w-full h-full mx-auto" src="{{step.url}}" alt="" />
+                    <div class="text-center">
+                        <p>{{step.title1 | translate}}</p>
+                        <p>{{step.title2 | translate}}</p>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<div class="py-2 mt-20 bg-slate-50">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mt-10">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-300">
+                {{"What We Offer" | translate}}
+            </h2>
+        </div>
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap -m-4">
+                <ng-container *ngFor="let product of products">
+                    <div class="lg:w-1/4 sm:w-1/2 p-4 w-full">
+                        <a class="block relative h-48 rounded overflow-hidden" href="">
+                            <img alt="SAMSUNG Crystal 4K Pro 146 cm (58 inch)"
+                                class="object-contain object-center w-full h-full block" src="{{product.url}}" />
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-gray-500 dark:text-gray-300 text-xs tracking-widest title-font mb-1">
+                                {{product.title}}
+                            </h3>
+                            <h2 class="text-gray-900 title-font text-lg font-medium dark:text-white">
+                                {{product.description}}
+                            </h2>
+                            <p class="mt-1 dark:text-gray-300">₹{{product.price}}</p>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="py-2">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mt-10">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-300">
+                {{"Featured Products" | translate}}
+            </h2>
+        </div>
+        <div class="mt-12 max-w-7xl mx-auto flex items-center justify-center flex-wrap">
+            <p-carousel [value]="featueProducts" [autoplayInterval]="3000" [circular]="false" [numVisible]="4"
+                [numScroll]="1">
+                <ng-template let-featureProduct pTemplate="item">
+                    <img src="{{featureProduct.url}}" alt="explore & identify">
+                    <h2>{{featureProduct.title}}</h2>
+                    <p class="text-gray-900 title-font font-normal dark:text-white">
+                        {{featureProduct.description}}
+                    </p>
+                    <p class="mt-6 dark:text-gray-300">Rent : ₹{{featureProduct.price}}</p>
+                    <div class="space-x-2 mt-16 text-center">
+                        <button
+                            class="rounded-md bg-red-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-white hover:bg-red-500">
+                            View details
+                        </button>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+    </div>
+</div>
+
+<div class="py-2 bg-slate-50">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 mt-10">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-300">
+                {{"Happy Customer’s" | translate}}
+            </h2>
+        </div>
+        <div class="mt-12 max-w-7xl mx-auto flex items-center justify-center flex-wrap">
+            <p-carousel [value]="featueProducts" [autoplayInterval]="6000" [circular]="false" [numVisible]="3"
+                [numScroll]="3">
+                <ng-template let-featureProduct pTemplate="item">
+                    <div>
+                        <div class="relative flex-shrink-0 w-48 min-h-min">
+                            <img class="relative object-cover w-28 h-28 rounded-full p-1 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500"
+                                src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
+                                alt="" />
+                        </div>
+                        <div class="mt-8">
+                            <blockquote>
+                                <p class="text-xl text-black dark:text-white">
+                                    “Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                    Quibusdam aliquam repellat laborum minima tempore deserunt
+                                    explicabo placeat! Fugit, molestias nesciunt.”
+                                </p>
+                            </blockquote>
+                            <p class="text-lg font-semibold text-black dark:text-white mt-7">
+                                John Doe
+                            </p>
+                            <p class="mt-1 text-base text-gray-600">
+                                Frontend Developer at DevUI
+                            </p>
+                            <p-rating [ngModel]="3" [readonly]="true" [stars]="5" [cancel]="false"></p-rating>
+                        </div>
+                    </div>
+                </ng-template>
+            </p-carousel>
+        </div>
+    </div>
+</div>
